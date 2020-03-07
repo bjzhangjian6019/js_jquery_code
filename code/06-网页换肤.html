@@ -1,0 +1,117 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>网页换肤</title>
+<style type="text/css">
+	/**
+	 * 自己设置：
+	 * 1、body：字体大小：18px, 字体类型：微软雅黑
+	 * 2、hr:边框 1px, 颜色：黄色;
+	 * 3、a:字体大小：17px, 字体粗细：500（定义由粗到细的字符。400 等同于 normal，而 700 等同于 bold。）
+	 * 4、a:悬浮颜色改变：#0099FF;
+	 * 5、h2,字体大小（小字体，大字体等）：文本对其方式：居中；
+	 * 6、主要内容：内边距(上，右，下，左)都是10px,
+	 * 			外边距设置为：0 auto（浏览器计算外边距）。
+	 * 			字间距：2px.
+	 * 
+	 * @type {[type]}
+	 */
+	body{
+		font-size: 18px;font-family: "微软雅黑";
+	}
+	hr{
+		border: 1px solid yellow;
+	}
+	a{
+		font-size: 17px;font-weight: 500;
+	}
+	a:hover{
+		color: #0099FF;
+	}
+	h2,#changefont{
+		text-align: center;
+	}
+	#newstext{
+		padding: 10px;
+		margin: 0 auto;
+		letter-spacing: 2px;
+	}
+	/* 预先定一些字体大小的选择器 */
+	.min{
+		font-size: 16px;
+	}
+	.middle{
+		font-size: 18px;
+	}
+	.max{
+		font-size: 20px;
+	}
+	.super-max{
+		font-size:24px;
+	}
+	.ss-max{
+		font-size:30px;
+		color: blue;
+		border: 1px solid green;
+	}
+
+</style>
+<!-- 引入外部的CSS文件 -->
+<link rel="stylesheet" href="css/none.css" id="link"/>
+
+<!--引入jquery的js库-->
+<script src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+	/** 练习1：执行下面的函数，切换字体大小 */
+	function resize(size){
+		//size是选择器的名字,直接赋值给div的class属性
+		//获取id为newstext 的div的元素	
+		var div = document.getElementById("newstext");
+		//将size选择器的名字设置给div的class属性
+		div.className = size;
+	}
+	
+	/** 练习2：执行下面的函数，为页面切换不同的皮肤 */
+	
+</script>
+</head>
+<body>
+    <h2>达内时代科技集团简介</h2>
+    <div id="changefont">
+    	<!--
+		#可以跳转到设置了id的目的地
+		javascript:void(0)则停留在原地，一动不动，我们称之为“死链接”
+		说白了，href="#"这种形式会整体刷新页面，而 href="javascript:void(0)" 则不会.
+		那什么情 况下用void(0)比较多呢，无刷新，当然是Ajax了，看一下Ajax的web页面的话，一般都会看到有很多的void(0)，：） ，所以在使用void(0)之前,最好先想一想,这个页面是否需要整体刷新.
+	    	-->
+	    <a href="javascript:void(0)" 
+	    	onclick="resize('min')">小字体</a> 
+	    <a href="javascript:void(0)" 
+	    	onclick="resize('middle')">中字体</a> 
+	    <a href="javascript:void(0)" 
+	    	onclick="resize('max')">大字体</a> 
+	    <a href="javascript:void(0)" 
+	    	onclick="resize('super-max')">超大字体</a>
+	    <a href="javascript:void(0)" 
+	    	onclick="resize('ss-max')">超级大字体</a>
+	    <a href="javascript:void(0)" 
+	    	onclick="">换肤</a>
+	</div>
+    <hr/>
+    
+    <div id="newstext" class="middle">
+		<p>
+			达内时代科技集团有限公司，是中国高端IT培训的领先品牌，致力于培养面向互联网、电信和金融领域的Java、C++、C#、.Net、软件测试、嵌入式、PHP、android等方面的中高端软件人才。
+		</p>
+		<p>
+			 达内创办于2002年，专注IT职业教育17年，2014年在美国纳斯达克上市公司。目前，已开设24大课程方向，在全国70多个城市建立了330家培训中心，真正实现“一地学习，全国就业”。高薪聘请总监级名师全职授课，术业有专攻，名师出高徒。实施“因材施教，分级培优”教学方案，让每一位学员都成才，让强者更强。采用“先学习，就业后付款”的模式，已帮助80万名学员成功就业。
+		</p>
+		<p>
+			达内优秀的教学效果和行业领先的经营模式赢得了社会各界的广泛赞誉和好评，荣获了各界权威机构的颁奖：达内成为业界唯一的一家2006、2007、2008、2009连续4年入选德勤评选的 “中国高科技高成长50强公司”、“亚太地区高科技高成长500强公司”，获得首届中国留学人才归国创业“腾飞”奖、中关村管理委员会指定的“软件人才培养示范基地”、被《计算机世界》评选的“就业服务杰出贡献奖”、被《中国计算机报》评选的“最具影响力培训机构奖”、被搜狐评为“中国十大教育集团”、被腾讯评为“中国大学生心目中最具影响力的IT品牌”。
+			有实力、有信誉，要培训，就选上市公司！
+		</p>
+    </div>
+
+    <hr/>
+</body>
+</html>
