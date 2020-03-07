@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+	<head>
+		<title>js的语法练习</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+			
+			/* 1、if分支练习：接收用户输入的成绩, 对成绩进行评级 */
+			/*
+			var score = prompt("请输入您的成绩：");
+			score = parseFloat(score);//转成浮点型
+			//score = score - 0;
+			if (score > 90 && score <= 100) {
+				console.log("优秀。");
+			} else if (score <=90 && score > 80 ){
+				console.log("您的成绩属于: 良好!");
+			}else if( score <=80 && score > 70 ){
+				console.log("您的成绩属于: 中等!");
+			}else if( score <=70 && score >= 60 ){
+				console.log("您的成绩属于: 及格!");
+			}else if( score < 60 && score >= 0 ){
+				console.log("您的成绩属于: 不及格!");
+			}else{
+				console.log("您的输入不合法!");
+			} 
+			*/
+			
+			/*
+				var age = 45;
+				if(age > 20){
+					console.log("青年人");
+				}else if(age > 40 && age < 60){
+					console.log("中年人");
+				}else if(age >= 60){
+					console.log("老年人");
+				}//输出结果是 "青年人"
+	 		*/
+
+	 		/* 2、switch分支练习: 接收用户输入的两个数值 和 
+	 	一个运算符(+、-、*、/)，根据用户输入的运算符, 
+	 	对两个数值进行运算。 */
+	 	/*
+	 	var num1 = prompt("请输入数字1：");
+	 	var opt = prompt("请输入运算符：");
+		var num2 = prompt("请输入数字2：");
+		switch(opt){
+			case "+": 
+			console.log("两个数的和为: "+ ( num1+num2 ) );
+			break;
+		case "-": 
+			console.log("两个数的差为: "+ ( num1-num2 ) );
+			break;
+		case "*": 
+			console.log("两个数的积为: "+ ( num1*num2 ) );
+			break;
+		case "/": 
+			console.log("两个数的商为: "+ ( num1/num2 ) );
+			break;
+		default:
+			console.log("您的输入有误!");
+	} 
+*/
+/* 3、for循环练习: 求1~50之间所有整数的和 */
+	/* var sum = 0;
+	for( var i=1; i<=50;i++){
+		sum += i; //sum = sum+i;
+	}
+	alert( "1~50之间所有整数的和为: "+sum ); */
+	
+	/* 4、练习: 遍历数组中的所有元素 */
+	 var arr = [100, "hello", true, new Object()];
+	for( var i=0; i<arr.length; i++ ){
+		alert( "第"+(i+1)+"个元素为: "+arr[i] );
+	} 
+	
+		</script>
+	</head>
+	
+	<body>
+		02-01js的语法练习
+		
+	</body>
+</html>

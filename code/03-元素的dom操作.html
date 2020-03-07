@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>元素的增删改查</title>
+<!--加入样式表-->
+<style type="text/css">
+	div { border:#0099FF 2px solid;height:60px;width:300px;margin:20px 10px;padding:10px;line-height:60px;font-size:26px;text-align:center;}
+	#div_1{ background-color:#00FFFF; }
+	#div_2{ background-color:#FF3399; }
+	#div_3{ background-color:#00FF00; }
+	#div_4{ background-color:#FFFF66; }
+	#info{ width:250px;height:90px;font-size:22px;padding:5px;resize:none; }、
+
+
+	input{font-size:18px;}
+</style>
+<script type="text/javascript">
+	/* -- 1、当鼠标点进输入框时,清除提示消息 */
+	function focusTA(thisobj){
+		if (thisobj.value == "请输入描述的信息...") {
+			thisobj.value = "";
+		}
+	}
+
+	/* -- 2、当鼠标离开输入框时,恢复提示信息 */
+	function blurTA(thisobj){
+		if (thisobj.value == "") {
+			thisobj.value = "请输入描述的信息...";
+		}
+	}
+	
+	/* -- 3、添加元素:添加一个div元素到body中 */
+	function addNode(){
+		alert("123w");
+		//1、创建一个新的div元素
+		var divObj = document.createElement("div");
+		//为创建的div设置内容
+		divObj.innerHTML = "我是新来的哈~~~";
+		
+		//2、获取body元素
+		var body = document.body;
+		//3、将div元素添加到body的内部
+		body.appendChild(divObj);
+	}
+
+	/* -- 4、删除元素: 删除id为div_2的元素 -- */
+	//parentNode
+	function deleteNode(){
+		alert("222w");
+		//1、获取id为div_2的元素
+		var div2 = document.getElementById("div_2");
+		//2、获取要删除的父元素
+		var body = div2.parentNode;
+		//3、通过父元素删除子元素
+		body.removeChild(div2);
+		
+	}
+
+	/* -- 5、更新元素内容：将div_3的内容更新为当前时间 -- */
+	function updateNode(){
+		alert("333w");
+		//1.获取id为div_3的元素
+		var div3 = document.getElementById("div_3");
+		//2、将div_3的内容更新为当前时间
+		var date = new Date().toLocaleString();
+		div3.innerHTML = date;
+	}
+	
+</script>
+</head>
+<body>
+	<h3>鼠标点进输入框、鼠标离开输入框</h3>
+   	<textarea id="info" onfocus="focusTA(this)" 
+   		onblur="blurTA(this)">请输入描述信息...</textarea><br/><br/>
+   	
+	<input type="button" onclick="addNode()"
+			value="创建一个div添加到body中"/>
+    <input type="button" onclick="deleteNode()"
+    		value="删除id为div_2的元素"/>
+    <input type="button" onclick="updateNode()"
+    		value="将div_3的内容更新为当前时间"/><hr/>
+    <div id="div_1">
+		div_1
+    </div>
+    <div id="div_2">
+    	div_2
+    </div>
+    <div id="div_3">
+    	div_3
+    </div>
+
+	
+
+	
+</body>
+</html>
