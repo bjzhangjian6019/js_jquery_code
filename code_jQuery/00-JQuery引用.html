@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<!--使用jQuert之前，必须引用JQuert库文件-->
+		<script src="js/jquery-1.4.2.js"></script>
+		<script type="text/javascript">
+			/*下面的函数将会在最后一个html元素加载完成后立即执行
+			*/
+			$(function(){
+				alert("引入成功啦。");
+			});
+
+			/*示例：获取h1元素内的所有内容(js方式)*/
+			$(function(){
+				//1.获取表示h1元素的js对象
+				var h1 = document.getElementById("d1");
+				//2.调用innerHTML属性获取h1元素的内容
+				alert(h1.innerHTML);
+			});
+
+		</script>
+		
+	</head>	
+	<body>
+		<h1 id="d1">Hello jQuery.</h1>
+		
+	</body>
+</html>
